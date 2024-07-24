@@ -1,0 +1,29 @@
+{% extends 'core/base.html' %}
+
+{% block title %}Portfolio{% endblock %}
+
+{% block background %}{% load static %}{% static 'core/img/portfolio-bg.jpg' %}{% endblock %}
+
+{% block headers %}
+<h1>Portafolio</h1>
+<span class="subheading">Currículo</span>
+{% endblock %} 
+
+{% block content %}
+    {% for project in projects %} {% comment %} Bucle que recorre los proyectos {% endcomment %}
+        <!-- Proyecto -->
+        <div class="row project">  	
+            <div class="col-lg-3 col-md-4 offset-lg-1">
+                <img class="img-fluid" src="{{project.image.url}}" alt="">{% comment %} Asigna la imagen de base de datos y le asigna la url automaticamente {% endcomment %}
+            </div>
+        <div class="col-lg-7 col-md-8">
+                <h2 class="section-heading title">{{project.title}}</h2>  {% comment %} Asigna el titulo de base de datos {% endcomment %}  
+            <p>{{project.description}}</p>                                {% comment %} Asigna la descripción de base de datos {% endcomment %}
+            {% if project.url %}                                          {% comment %} Si el proyecto tiene url la muestra {% endcomment %}
+                <p><a href="{{project.url}}">Más información</a></p>      {% comment %} Asigna la url de base de datos si existe {% endcomment %}
+            {% endif %}
+            </div>
+        </div>
+    {% endfor %}
+
+{% endblock %}

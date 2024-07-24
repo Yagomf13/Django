@@ -1,15 +1,15 @@
 {% extends 'core/base.html' %}
 
-{% block title %}about-me{% endblock %}
+{% block title %}about-me{% endblock %} {% comment %} asignamos al block del titulo un valor {% endcomment %}
 
-{% block background %}{% load static %}{% static 'core/img/about-bg.jpg' %}{% endblock %}
+{% block background %}{% load static %}{% static 'core/img/about-bg.jpg' %}{% endblock %} {% comment %} asignamos al block del background un valor {% endcomment %}
 
 {% block headers %}
-<h1>Acerca de</h1>
+<h1>Acerca de</h1> {% comment %} asignamos al block del header un valor {% endcomment %}
 <span class="subheading">Biografía</span>
 {% endblock %} 
 
-{% block content %}
+{% block content %}  {% comment %} asignamos al block del contenido un valor {% endcomment %}
 <div class="row">   
     <div class="col-lg-3 col-md-4 offset-lg-1">
         <img class="img-fluid avatar" src="{% static 'core/img/avatar.jpg' %}" alt="">

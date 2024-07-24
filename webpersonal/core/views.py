@@ -1,4 +1,4 @@
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import render
 
 html_base = """
 <h1>Mi Web Personal</h1>
@@ -15,9 +15,6 @@ def home(request):
 
 def about(request):
     return render(request, 'core/about-me.html')
-
-def portfolio(request):
-    return render(request, 'core/portfolio.html')
 
 def contacto(request):
     return render(request, 'core/contacto.html')

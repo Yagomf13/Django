@@ -6,10 +6,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>{% block title %}{% endblock %} | Juan Pérez</title>
+    <title>{% block title %}{% endblock %} | Juan Pérez</title>    {% comment %} Block para cambiar el titulo dependiendo de la página en la que estemos {% endcomment %}
 
     <!-- Estilos y fuentes del template  -->
-     {% load static %}
+     {% load static %}   {% comment %} Cargamos los static porque si no no funcionan {% endcomment %}
     <link href="{% static 'core/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
     <link href="{% static 'core/vendor/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
     <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
@@ -31,7 +31,7 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a class="nav-link" href="{% url 'home' %}">Portada</a>
+              <a class="nav-link" href="{% url 'home' %}">Portada</a>   {% comment %} Redirijimos a las paginas {% endcomment %}
             </li>
             <li class="nav-item">
               <a class="nav-link" href="{% url 'about' %}">Acerca de</a>
@@ -54,7 +54,7 @@
         <div class="row">
           <div class="col-lg-8 col-md-10 mx-auto">
             <div class="site-heading">
-              {% block headers %}{% endblock %} 
+              {% block headers %}{% endblock %} {% comment %} Block para cambiar el header dependiendo de la página en la que estemos {% endcomment %}
               
             </div>
           </div>
@@ -64,11 +64,11 @@
 
     <!--  contenido  -->
     <div class="container">
-        {% block content %}{% endblock %}
+        {% block content %}{% endblock %}  {% comment %} Block para cambiar el contenido dependiendo de la página en la que estemos {% endcomment %}
       </div>  
     </div>
 
-    {% if request.path != "/" %}<hr>{% endif %}
+    {% if request.path != "/" %}<hr>{% endif %}  {% comment %} condicion para mostran una barra si la path es diferente de '' {% endcomment %}
 
     <!-- Pié de página -->
     <footer>
@@ -108,7 +108,7 @@
     </footer>
 
     <!-- Bootstrap y Javascripts -->
-    <script src="{% static 'core/vendor/jquery/jquery.min.js' %}"></script>
+    <script src="{% static 'core/vendor/jquery/jquery.min.js' %}"></script>  {% comment %} Importamos statics {% endcomment %}
     <script src="{% static 'core/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
     <script src="{% static 'core/js/clean-blog.min.js' %}"></script>
 
