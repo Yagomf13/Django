@@ -32,95 +32,86 @@ python -m venv venv
 
 Activa el entorno virtual:
 
-    En Windows:
-
-    bash
-
+```bash
 venv\Scripts\activate
-
-En macOS y Linux:
-
-bash
-
-    source venv/bin/activate
+```
 
 3. Instalar Dependencias
 
 Instala Django y otras dependencias necesarias:
 
-bash
-
+```bash
 pip install django django-ckeditor Pillow pylint pylint-django pylint-celery
+```
 
 4. Crear el Proyecto Django
 
 Crea un nuevo proyecto Django:
 
-bash
-
+```bash
 django-admin startproject <Nombre-del-proyecto>
+```
 
 5. Crear una Aplicación Django
 
 Navega al directorio del proyecto y crea una nueva aplicación:
 
-bash
-
+```bash
 cd <Nombre-del-proyecto>
 python manage.py startapp <Nombre-de-la-app>
+```
 
 6. Ejecutar el Servidor de Desarrollo
 
 Para asegurarte de que todo esté funcionando correctamente, ejecuta el servidor de desarrollo:
 
-bash
-
+```bash
 python manage.py runserver
+```
 
 7. Realizar Migraciones
 
 Crea y aplica las migraciones iniciales:
 
-bash
-
+```bash
 python manage.py makemigrations
 python manage.py migrate
+```
 
 8. Crear un Superusuario
 
 Crea un superusuario para acceder al administrador de Django:
 
-bash
-
+```bash
 python manage.py createsuperuser
+```
 
 Cambios en settings.py
 
 Para configurar tu aplicación en Django, realiza los siguientes cambios en settings.py:
 Agregar Aplicaciones a INSTALLED_APPS
 
-    Si solo necesitas agregar plantillas, agrega el nombre de la aplicación:
-
-    python
-
+```bash
 INSTALLED_APPS = [
     ...,
     '<Nombre-de-la-app>',
 ]
+```
 
 Si estás configurando una aplicación con más configuraciones, como base de datos, agrega la configuración completa:
 
-python
-
-    INSTALLED_APPS = [
+```bash
+INSTALLED_APPS = [
         ...,
         'portfolio.apps.PortfolioConfig',
     ]
+```
 
 Ejemplo Completo de INSTALLED_APPS
 
 python
 
+```bash
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -131,11 +122,14 @@ INSTALLED_APPS = [
     '<Nombre-de-la-app>',
     'portfolio.apps.PortfolioConfig',
 ]
+```
+
 
 Ejecución del Proyecto
 
 Una vez que hayas configurado todo, puedes ejecutar tu proyecto con:
 
-bash
-
+```bash
 python manage.py runserver
+```
+
