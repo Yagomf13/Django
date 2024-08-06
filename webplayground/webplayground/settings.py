@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'registration',   #!Arriba para que tenga prioridad
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -38,8 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'core',
-    'pages.apps.PagesConfig',
     'ckeditor',
+    'pages.apps.PagesConfig',
 ]
 
 MIDDLEWARE = [
@@ -124,3 +125,10 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+#Auth redirects
+LOGIN_REDIRECT_URL = 'home'   #!Para que redirija al home
+LOGOUT_REDIRECT_URL = 'home'
+
+
