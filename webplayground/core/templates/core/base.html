@@ -40,10 +40,13 @@
                   <a class="nav-link" href="{% url 'singup' %}">Registro</a>
                 </li>
               {% else %}
+              <li class="nav-item mr-2">
+                <a class="nav-link" href="{% url 'profile' %}">Perfil</a>
+              </li>
                 <li class="nav-item">
                   <form id="logout-form" method="post" action="{% url 'logout' %}" style="display: inline;">
                     {% csrf_token %}
-                    <button type="submit" class="nav-link" style="background: none; border: none; padding: 0; cursor: pointer;">
+                    <button type="submit" class="nav-link" style="background: none; border: none; cursor: pointer;">
                       Salir
                     </button>
                   </form>
