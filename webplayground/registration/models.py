@@ -22,4 +22,4 @@ class Profile(models.Model):
 def ensure_profile_exists(sender, instance, **kwargs):   #!Crea un perfil cuando se cree una cuenta automaticamente
     if kwargs.get('created', False):  #!Solo se ejecuta cuando se cree el perfil la primera vez
         Profile.objects.get_or_create(user=instance)
-        print('Se acaba de crear un usuario y su perfil enlazado.')
+        # print('Se acaba de crear un usuario y su perfil enlazado.')
