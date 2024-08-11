@@ -1,5 +1,6 @@
 from django.contrib import admin
 from django.urls import path, include
+from django.conf import settings
 
 urlpatterns = [
     # Paths del core
@@ -21,3 +22,14 @@ urlpatterns = [
     # Paths del admin
     path('admin/', admin.site.urls),
 ]
+
+if settings.DEBUG:
+    from django.conf.urls.static import static
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+
+#Custom titles for admin
+admin.site.site_header = 'La Caffetiera'  #Cambiar el titulo del admin
+admin.site.index_title = 'Panel de Administrados'
+admin.site.site_title = 'La Caffetiera'
+
